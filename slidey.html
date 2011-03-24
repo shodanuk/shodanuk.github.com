@@ -1,0 +1,152 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Slidey Panel | Shodan.UI - A UI component library for PrototypeJS &amp; Scripty2</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link href='http://fonts.googleapis.com/css?family=Coda:800' rel='stylesheet'>
+  <link href='http://fonts.googleapis.com/css?family=Vollkorn:regular,italic,bold,bolditalic' rel='stylesheet'>
+  <link href='css/reset.css' rel='stylesheet'>
+  <link href='css/960.css' rel='stylesheet'>
+  <link href='css/text.css' rel='stylesheet'>
+  <link href="css/style.css?v=2"  rel="stylesheet">
+
+  <script src="js/libs/modernizr-1.7.min.js"></script>
+</head>
+<body>
+  <div class='container_12' id="wrapper">
+    <header class='grid_12' role='banner'>
+      <a class='logo' href='/'>Shodan.UI</a>
+    </header>
+
+    <div class='container_12' id='content' role='main'>
+      <div class='left-col grid_8'>
+        <h2>Shodan.UI.SlideyPanel</h2>
+        <h3>What is it?</h3>
+        <p>
+          A mechanism for hiding and showing content with a nice, sliding animation. Pretty common around teh Interwebs although
+          I've never really found a proper name for them. Unless informed otherwise, I hereby name them "Slidey Panels".
+        </p>
+        <h3>Demo</h3>
+        <h4>Basic example with default options</h4>
+        <div id='sh-ui-slidey-demo'>
+          <div class='hd'>
+            <h3>Click me!</h3>
+          </div>
+          <div class='content'>
+            <div class='inner'>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </div>
+        </div>
+        <h4>HTML</h4>
+        <p>The .inner &amp; .hd divs are only for styling purposes and can be omitted. (see note in CSS section below).</p>
+        <script src='https://gist.github.com/837223.js?file=Shodan.UI.SlideyPanel.html'></script>
+        <h4>Javascript</h4>
+        <script src='https://gist.github.com/837236.js?file=Shodan.UI.SlideyPanel.js'></script>
+        <h4>CSS</h4>
+        <p>
+          Style as you see fit but make sure that you don't apply any border, padding or margin
+          to the content container. If you need to, add it to an inner div, as per the example.
+        </p>
+        <p>
+          If you don't intend to use any border, margin or padding style you can omit the .inner div altogether.
+        </p>
+        <h3>Usage</h3>
+        <p>
+          See the demo for an example markup pattern.
+        </p>
+        <code>new Shodan.UI.SlideyPanel(element (String)[, options (Object)]);</code>
+        <ul class='args'>
+          <li>element (DOM Element | String): A DOM element or ID</li>
+          <li>options (Object): Various configuration options</li>
+        </ul>
+        <h4>Options</h4>
+        <ul class='args'>
+          <li>
+            <strong>autoHide (Bool):</strong>
+            set to true if content should be hidden initially. Default: true;
+          </li>
+          <li>
+            <strong>callback (Function):</strong>
+            Callback function to be executed after show / hide animation. Default: null.
+          </li>
+          <li>
+            <strong>contentSelector (String):</strong>
+            CSS selector for the content to be toggled. Should be unique. Default: ".content".
+          </li>
+          <li>
+            <strong>duration (Int):</strong>
+            Animation duration in seconds. Default: 0.5
+          </li>
+          <li>
+            <strong>openClass (String):</strong>
+            CSS class to be applied to container when content is showing. Default: "open".
+          </li>
+          <li>
+            <strong>toggleSelector (String):</strong>
+            CSS selector for the toggle. Default: ".hd".
+          </li>
+          <li>
+            <strong>transition (String):</strong>
+            Scripty2 animation transition preset.
+            <a href="http://scripty2.com/doc/scripty2%20fx/s2/fx/transitions.html">Scripty2 transitions</a>
+          </li>
+        </ul>
+        <h3>ToDo</h3>
+        <p>
+          <ul>
+            <li>An example demonstrating additional options.</li>
+          </ul>
+        </p>
+      </div>
+      <aside class='right-col grid_4'>
+        <div class='module' id='github'>
+          <h3>Hosted on Github</h3>
+          <p>
+            <a href='https://github.com/shodanuk/Shodan-UI'>Fork on Github</a>
+          </p>
+          <h4>Clone the repo</h4>
+          <code>git@github.com:shodanuk/Shodan-UI.git</code>
+        </div>
+      </aside>
+    </div>
+
+    <footer class='grid_12' role='contentinfo'></footer>
+  </div>
+  <script src="js/libs/prototype.s2.min.js"></script>
+  <script src="js/libs/shodan.ui.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+  <script type='text/javascript'>
+    //<![CDATA[
+      $(document).observe('dom:loaded', function(){
+        new Shodan.UI.SlideyPanel('sh-ui-slidey-demo');
+      });
+    //]]>
+  </script>
+  <!--[if lt IE 7 ]>
+  <script src="js/libs/dd_belatedpng.js"></script>
+  <script> DD_belatedPNG.fix('img, .png_bg');</script>
+  <![endif]-->
+  <script>
+    var _gaq=[['_setAccount','UA-2131662-10'],['_trackPageview']]; // Change UA-XXXXX-X to be your site's ID
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+</body>
+</html>
